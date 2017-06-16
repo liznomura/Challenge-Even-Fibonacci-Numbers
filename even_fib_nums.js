@@ -7,18 +7,21 @@
  * @return {Number} sum
  */
 
- function isFib(n) {
-  let plusFour = 5 * Math.pow(n, 2) + 4;
-  let minusFour = 5 * Math.pow(n, 2) - 4;
-  if (Number.isInteger(Math.sqrt(plusFour)) === true || Number.isInteger(Math.sqrt(minusFour)) === true) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
-function _sumFibs( maxFibValue ) {
+ function _sumFibs( maxFibValue ) {
+
   var sum = 0;
+
+  function isFib(n) {
+    let plusFour = 5 * Math.pow(n, 2) + 4;
+    let minusFour = 5 * Math.pow(n, 2) - 4;
+    if (Number.isInteger(Math.sqrt(plusFour)) === true || Number.isInteger(Math.sqrt(minusFour)) === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   for (var i = 0; i <= maxFibValue; i++) {
     if (i % 2 === 0 && isFib(i) === true) {
       sum += i;
